@@ -1,0 +1,32 @@
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+
+# The main route serves all the front end requests.
+"https://{default}/":
+  type: upstream
+  upstream: "app:http"
+
+# Redirect www to non-www, common SEO best practice.
+"https://www.{default}/":
+  type: redirect
+  to: "https://{default}/"
+
+# Serve static files directly if possible for performance reasons.
+"https://{default}/media/":
+  type: upstream
+  upstream: "app:http"
+
+"https://{default}/thumbnail/":
+  type: upstream
+  upstream: "app:http"
+
+# Optionally, handle additional routes or specific requirements.
+"https://{default}/api/":
+  type: upstream
+  upstream: "app:http"
+
+"https://{default}/admin/":
+  type: upstream
+  upstream: "app:http"

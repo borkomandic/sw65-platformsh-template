@@ -1,0 +1,40 @@
+# Main DB
+maindb:
+  type: mariadb:10.11
+  disk: 512  # Specify disk size in MB
+  configuration:
+    schemas:
+      - main
+    endpoints:
+      main:
+        default_schema: main
+        privileges:
+          main: admin
+
+# Stage DB
+stagedb:
+  type: mariadb:10.11
+  disk: 512  # Specify disk size in MB
+  configuration:
+    schemas:
+      - stage
+    endpoints:
+      stage:
+        default_schema: stage
+        privileges:
+          stage: admin
+
+# Redis service configuration
+cacheredis:
+  type: redis:7.0
+  configuration:
+    maxmemory_policy: volatile-lfu
+
+# OpenSearch service configuration
+opensearch:
+    type: opensearch:2.0
+    disk: 256
+
+fileshare:
+  type: network-storage:2.0
+  disk: 512

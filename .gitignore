@@ -1,0 +1,55 @@
+###> project general rules ###
+/.idea
+/src/vendor/*
+/src/.bash_history
+/src/config/jwt/*
+/src/.cache/
+/src/.config/*
+/src/.local/
+/src/files/
+/src/.mysql_history
+/src/.rnd
+/src/.uniqueid.txt
+/src/.htaccess.watch
+/src/.bashrc
+/src/.npm/
+/src/.env
+/.backup/*
+*.sql
+docker/*
+!docker/shop/
+docker/shop/*
+!docker/shop/Dockerfile
+!/src/public/.htaccess
+!/src/config/jwt/.gitkeep
+###< project general rules ###
+
+###> in case symfony recipes generate some docker files, ###
+###> they arent gonna be used, since docker-compose is handled from ./ ###
+/src/.gitignore
+/src/compose.yaml
+/src/compose.override.yaml
+###< project specific ###
+
+###> platform.sh ###
+!.platform.app.yaml
+!.platform/routes.yaml
+!.platform/services.yaml
+###< platform.sh ###
+
+###> shopware/core ###
+/src/.env.local
+/src/.env.*.local
+/src/public/bundles/*
+/src/public/media/*
+/src/public/theme/*
+/src/public/thumbnail/*
+/src/public/sitemap/*
+/src/files/*
+!/src/files/.htaccess
+/src/var/*
+!/src/var/.htaccess
+/src/auth.json
+/src/install.lock
+/src/public/asset-manifest.json
+###< shopware/core ###

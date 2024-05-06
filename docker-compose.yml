@@ -1,0 +1,78 @@
+services:
+  shop:
+    container_name: ${PROJECT_NAME}_shop
+    build:
+      context: ./docker/shop
+      args:
+        - IMAGE=dockware/dev:6.6.1.2 # image for local development from https://dockware.io/images -> dev
+        - APACHE_RUN_USER=sw6
+        - APACHE_RUN_GROUP=sw6
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "80:80" # apache2
+      - "22:22" # ssh
+      - "8888:8888" # watch admin
+      - "9998:9998" # watch storefront proxy (not needed if you start with "make watch-storefront")
+      - "9999:9999" # watch storefront
+    volumes:
+      - "./src:/var/www/html/"
+      - "./boot_start.sh:/var/www/boot_start.sh" # pre-entrypoint actions
+      - "./boot_end.sh:/var/www/boot_end.sh" # post-entrypoint actions
+    networks:
+      - web
+    environment:
+      - PROJECT_NAME=${PROJECT_NAME}
+
+  db:
+    container_name: ${PROJECT_NAME}_db
+    image: mariadb:10.11
+    networks:
+      - web
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=shopware
+    volumes:
+      - "./docker/db/_volumes/config/etc/mysql:/etc/mysql/conf.d"
+      - "./docker/db/_volumes/mysql:/var/lib/mysql"
+
+  adminer:
+    container_name: ${PROJECT_NAME}_adminer
+    image: adminer
+    restart: always
+    ports:
+      - "8989:8080"
+    networks:
+      - web
+
+  redis:
+    container_name: ${PROJECT_NAME}_redis
+    image: redis:7.0
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./docker/redis/_volumes/redis-data:/data"
+    networks:
+      - web
+
+  opensearch:
+    container_name: ${PROJECT_NAME}_opensearch
+    image: opensearchproject/opensearch:2
+    ports:
+      - '9200:9200'
+    volumes:
+      - "./docker/opensearch/_volumes/opensearch-data:/usr/share/opensearch/data"
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=UtgBSHoU7oV7!
+
+## ***********************************************************************
+##  NETWORKS
+## ***********************************************************************
+networks:
+  web:
+    external: false
