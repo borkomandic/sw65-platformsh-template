@@ -1,6 +1,6 @@
 # Boilerplate for Webstore
 
-This is a boilerplate template designed for setting up a Shopware 6.6 store. It includes integration with Platform.sh PAAS, ensuring a robust and scalable e-commerce environment.
+This is a boilerplate template designed for setting up a Shopware 6.5 store. It includes integration with Platform.sh PAAS, ensuring a robust and scalable e-commerce environment.
 
 ## Template Overview
 
@@ -10,7 +10,7 @@ This template features a decoupled `.src/` directory containing all Shopware 6 (
 
 The technology stack for this boilerplate includes:
 
-- **Shopware**: Version 6.6.1.2, core platform providing the e-commerce framework.
+- **Shopware**: Version 6.5.8.9, core platform providing the e-commerce framework.
 - **Symfony Flex**: Used for managing Symfony configurations and recipes, enhancing the project's modularity and flexibility.
 - **PHP**: Version 8.3
 - **MariaDB**: Version 10.11

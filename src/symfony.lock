@@ -1,4 +1,13 @@
 {
+    "doctrine/annotations": {
+        "version": "2.0",
+        "recipe": {
+            "repo": "github.com/shopware/recipes",
+            "branch": "main",
+            "version": "1.0",
+            "ref": "d7afb8d11ee0e18f644cc77c2df9b372e89cb3a9"
+        }
+    },
     "nyholm/psr7": {
         "version": "1.8",
         "recipe": {
@@ -12,73 +21,43 @@
         ]
     },
     "shopware/administration": {
-        "version": "6.6",
+        "version": "6.5",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
-            "version": "6.6",
-            "ref": "c2841ec14354810958eee87602b61ccc100a1bce"
-        },
-        "files": [
-            "bin/build-administration.sh",
-            "bin/watch-administration.sh"
-        ]
+            "version": "6.4",
+            "ref": "9aee89717df7bf9a7a23ed580bc80ae58853c3b2"
+        }
     },
     "shopware/core": {
-        "version": "6.6",
+        "version": "6.5",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
-            "version": "6.6",
-            "ref": "11f4dc94daaaf19628ef5807f76f86e3f80c56bd"
-        },
-        "files": [
-            "bin/.htaccess",
-            "bin/build-js.sh",
-            "bin/ci",
-            "bin/console",
-            "bin/functions.sh",
-            "config/jwt/.gitignore",
-            "config/packages/shopware.yaml",
-            "custom/.htaccess",
-            "custom/apps/.gitignore",
-            "custom/plugins/.gitignore",
-            "custom/static-plugins/.gitignore",
-            "files/.htaccess",
-            "public/.htaccess.dist",
-            "public/index.php",
-            "public/maintenance.html",
-            "var/.htaccess",
-            ".htaccess"
-        ]
+            "version": "6.4",
+            "ref": "329939fd3ed1842ae4e15aa5170a5c09d6fcb632"
+        }
     },
     "shopware/elasticsearch": {
-        "version": "6.6",
+        "version": "6.5",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
-            "version": "6.6",
+            "version": "6.4",
             "ref": "f68a89cacedf3e2132444874e1e1e3c4864dae6d"
-        },
-        "files": [
-            "config/packages/elasticsearch.yaml"
-        ]
+        }
     },
     "shopware/storefront": {
-        "version": "6.6",
+        "version": "6.5",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
-            "version": "6.6",
-            "ref": "317bcc55a2f459ab2e7bcaced82ab51234fc5d8f"
-        },
-        "files": [
-            "bin/build-storefront.sh",
-            "bin/watch-storefront.sh"
-        ]
+            "version": "6.4",
+            "ref": "0b636a574cd90133571d20e53e27dc07047333b9"
+        }
     },
     "symfony/console": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
@@ -87,7 +66,7 @@
         }
     },
     "symfony/debug-bundle": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
@@ -111,19 +90,16 @@
         ]
     },
     "symfony/framework-bundle": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "5.4",
             "ref": "bb1cc9e0b12d1b8c2ca2b1a8ae48c9917e338289"
-        },
-        "files": [
-            "config/services.yaml"
-        ]
+        }
     },
     "symfony/lock": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
@@ -135,7 +111,7 @@
         ]
     },
     "symfony/mailer": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
@@ -147,34 +123,25 @@
         ]
     },
     "symfony/messenger": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "6.0",
             "ref": "15c3e1ff429760e3309e821ebd4a675f7cbfe2ba"
-        },
-        "files": [
-            "config/packages/messenger.yaml"
-        ]
+        }
     },
     "symfony/monolog-bundle": {
-        "version": "3.10",
+        "version": "3.8",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "3.3",
             "ref": "3a0c7880838a109976a75560b39468a79985e892"
-        },
-        "files": [
-            "config/packages/dev/monolog.yaml",
-            "config/packages/prod/deprecations.yaml",
-            "config/packages/prod/monolog.yaml",
-            "config/packages/test/monolog.yaml"
-        ]
+        }
     },
     "symfony/routing": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
@@ -183,7 +150,7 @@
         }
     },
     "symfony/translation": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
@@ -192,7 +159,7 @@
         }
     },
     "symfony/twig-bundle": {
-        "version": "7.0",
+        "version": "6.3",
         "recipe": {
             "repo": "github.com/shopware/recipes",
             "branch": "main",
@@ -201,12 +168,12 @@
         }
     },
     "symfony/validator": {
-        "version": "7.0",
+        "version": "6.4",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "7.0",
-            "ref": "8c1c4e28d26a124b0bb273f537ca8ce443472bfd"
+            "version": "5.3",
+            "ref": "c32cfd98f714894c4f128bb99aa2530c1227603c"
         },
         "files": [
             "config/packages/validator.yaml"

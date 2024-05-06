@@ -6,6 +6,8 @@ ENV_PATH="$PWD/.env"
 
 ENV_VARIABLES="# Generated for localhost by Docker's boot_start.sh...
 PROJECT_NAME=$PROJECT_NAME
+APP_SECRET=f3e45cbb322bf20fcfd2fa4ff9c5e607
+INSTANCE_ID=1e4a82e73644d231110624b432315c72
 APP_DEBUG=1
 APP_ENV=dev
 APP_URL=http://$PROJECT_NAME.local

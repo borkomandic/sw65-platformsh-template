@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker/shop
       args:
-        - IMAGE=dockware/dev:6.6.1.2 # image for local development from https://dockware.io/images -> dev
+        - IMAGE=dockware/dev:6.5.8.9 # image for local development from https://dockware.io/images -> dev
         - APACHE_RUN_USER=sw6
         - APACHE_RUN_GROUP=sw6
     depends_on:

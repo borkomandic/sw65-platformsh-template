@@ -7,6 +7,3 @@ shopware:
     admin_worker:
 # The Admin worker should be disabled on production server.
 #       enable_admin_worker: false
-    api:
-        jwt_key:
-            use_app_secret: true
